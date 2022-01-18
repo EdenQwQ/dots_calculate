@@ -1,0 +1,38 @@
+# Launch Apps
+super + shift + {f,w,e}
+	{kitty ranger,firefox-bin,kitty nvim}
+
+super + Return
+	kitty ~
+
+# Rofi
+super + p
+	rofi -show combi
+
+super +{x}
+	~/scripts/rofi/{powermenu}
+
+# Take a screenshot
+Print
+	scrot 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+	
+# Take a screenshot in 5 second
+alt + Print	
+	scrot -d 5 'Screenshot_%Y-%m-%d-%S_$wx$h.png' -e 'mv $f $$(xdg-user-dir PICTURES) ; viewnior $$(xdg-user-dir PICTURES)/$f'
+
+# Brighness control
+XF86MonBrightnessUp
+	xbacklight -inc 10
+	
+XF86MonBrightnessDown
+	xbacklight -dec 10
+
+# Volume control
+XF86AudioRaiseVolume
+	amixer set Master 5%+
+
+XF86AudioLowerVolume
+	amixer set Master 5%-
+
+XF86AudioMute
+	amixer set Master toggle
