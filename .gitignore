@@ -1,0 +1,8 @@
+**/.git
+**/temp
+dwm/dwm
+dwm/dwmc
+dwm/*.orig
+dwm/*.rej
+dwm/*.o
+dwm/config.h
